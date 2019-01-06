@@ -6,4 +6,7 @@
 //  Copyright © 2018 20171105113. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class Viewb: UIViewController {
+}

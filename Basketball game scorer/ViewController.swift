@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var homepoints: UITextField!
     @IBOutlet weak var awaypoints: UITextField!
     
+    //计时变量定义及初始化
     var second:Int = 60
     var minute:Int = 3
     var timer :Timer!
@@ -22,6 +23,8 @@ class ViewController: UIViewController {
     var temp2:String = "0"
     var homepoint:Int = 0
     var awaypoint:Int = 0
+    
+    //比赛开始计时
     @IBAction func start(_ sender: Any) {
         temp = seconddisplay.text!
         second = Int(temp)!
@@ -32,10 +35,11 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(1), target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
     }
     
+    //比赛暂停计时
     @IBAction func stop(_ sender: Any) {
         timer.invalidate()
     }
-    
+    //计时函数
     @objc func tickDown() {
         second -= 1
         
@@ -56,7 +60,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    //球队加分按钮
     @IBAction func Homebonuspoints(_ sender: Any) {
         homepoint = homepoint + 1
         homepoints.text = "\(homepoint)"
